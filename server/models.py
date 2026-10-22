@@ -61,7 +61,7 @@ class Speaker(db.Model):
     bio = db.relationship("Bio", back_populates="speaker", uselist=False)
 
     def __repr__(self):
-        return f"<Speaker {id}, {name}>"
+        return f"<Speaker {self.id}, {self.name}>"
 
 
 class Bio(db.Model):
@@ -74,4 +74,4 @@ class Bio(db.Model):
     speaker = db.relationship("Speaker", back_populates="bio")
 
     def __repr__(self):
-        return f"<Bio {id}, {bio_text}>"
+        return f"<Bio {self.id}, {self.bio_text}>"
